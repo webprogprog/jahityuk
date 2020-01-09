@@ -1,0 +1,59 @@
+.heading {
+    font-size: 16pt;
+    font-weight: bold;
+}
+
+.tailor-name {
+    font-size: 12pt;
+    margin-bottom: 2em;
+}
+
+.box-h {
+    background-color: black;
+    color: white;
+    box-shadow: 0px 1px 3px lightgray;
+    font-weight: bold;
+    font-size: 10pt;
+}
+
+.box-item {
+    padding: .5em;
+}
+
+.box-h, .box-child {
+    display: flex;
+    flex-direction: row;
+}
+
+.item-name {
+    width: 50%;
+}
+
+.quantity {
+    width: 10%;
+}
+
+.price {
+    width: 40%;
+}
+
+.container {
+    display: flex;
+    margin-top: 2em;
+}
+
+.box {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    border: solid 1em white;
+    border-radius: 15px;
+    box-shadow: 0px 1px 3px lightgray;
+    height: 80vh;
+}
+
+.total-p {
+    font-weight: bold;
+    font-size: 14pt;
+    border-top: solid 1px lightgrey;
+}
