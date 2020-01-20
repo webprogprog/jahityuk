@@ -1,37 +1,33 @@
 <?php
 
-use Illuminate\Support\Facades\Schema;
-use Illuminate\Database\Schema\Blueprint;
-use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\DB;
 
-class CreateRequestsTable extends Migration
+class RequestTableSeeder extends Seeder
 {
     /**
-     * Run the migrations.
+     * Run the database seeds.
      *
      * @return void
      */
-    public function up()
+    public function run()
     {
-        Schema::create('requests', function (Blueprint $table) {
+        /*
             $table->bigIncrements('id');
             $table->bigInteger('buyer_id')->unsigned();
             $table->foreign('buyer_id')->references('id')->on('users');
             $table->bigInteger('seller_id')->unsigned();
             $table->foreign('seller_id')->references('id')->on('users');
             $table->enum('status', array('WAITING_FOR_APPROVAL', 'APPROVED', 'DECILINED', 'WORK_IN_PROGRESS', 'ON SHIPPING', 'DONE'));
-            $table->dateTime('approval_at')->nullable();
+            $table->dateTime('approval_at');
             $table->timestamps();
-        });
-    }
-
-    /**
-     * Reverse the migrations.
-     *
-     * @return void
-     */
-    public function down()
-    {
-        Schema::dropIfExists('requests');
+        */
+        DB::table('requests')->insert([
+            [
+                'buyer_id' => 1,
+                'seller_id' => 2,
+                'status' => 'WAITING_FOR_APPROVAL'
+            ]
+        ]);
     }
 }

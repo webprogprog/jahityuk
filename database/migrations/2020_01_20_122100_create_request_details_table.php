@@ -19,7 +19,8 @@ class CreateRequestDetailsTable extends Migration
             $table->foreign('request_id')->references('id')->on('requests');
             $table->bigInteger('item_id')->unsigned();
             $table->foreign('item_id')->references('id')->on('items');
-            $table->enum('size', array('S', 'M', 'L', 'XL', 'XXL', 'XXXL'));
+            $table->enum('size', array('S', 'M', 'L', 'XL', 'XXL', 'XXXL'))->nullable();
+            $table->text('description')->nullable();
             $table->string('color');
             $table->double('priceSnapshot', 10, 2);
             $table->timestamps();

@@ -19,7 +19,7 @@ class CreateItemsTable extends Migration
             $table->foreign('user_id')->references('id')->on('users');
             $table->string('name');
             $table->double('price', 10, 2);
-            $table->string('tags');
+            $table->string('tags')->nullable();
             $table->timestamps();
         });
     }
