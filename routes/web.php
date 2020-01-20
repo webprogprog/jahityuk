@@ -12,12 +12,10 @@
 */
 
 Route::get('/', function () {
-    return view('index');
+    return view('welcome');
 });
 
-Route::get('/search', function () {
-    return view('search');
-});
+
 
 Route::get('/payment', function () {
     return view('payment');
@@ -30,6 +28,6 @@ Route::get('/company_name', function () {
 Route::get('/chat', function () {
     return view('chat');
 });
-Auth::routes();
 
+Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
