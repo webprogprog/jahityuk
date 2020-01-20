@@ -28,7 +28,11 @@ class User extends Authenticatable
         'password', 'remember_token',
     ];
 
-    // public function index() {
-    //     return $this->hasMany('App\Customer', 'user_id', 'user_id');
-    // }
+    public function items() {
+        return $this->hasMany('App\Model\Item');
+    }
+
+    public function requests() {
+        return $this->hasMany('App\Model\Request');
+    }
 }
