@@ -21,8 +21,9 @@ class CreateUsersTable extends Migration
             $table->string('password');
             $table->rememberToken();
             $table->string('store_name')->nullable();
-            $table->longText('user_picture')->nullable();
-            $table->longText('store_picture')->nullable();
+            $table->string('store_description')->nullable();
+            $table->string('user_picture')->nullable()->default('avatar.jpg');
+            $table->string('store_picture')->nullable()->default('tailor.jpg');
             $table->timestamps();
         });
     }

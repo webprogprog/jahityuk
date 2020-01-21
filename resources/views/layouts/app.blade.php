@@ -56,6 +56,19 @@
                                 </a>
 
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                                    <a href="{{ URL::to('/user') }}/{{ Auth::user()->id }}/edit" class="dropdown-item">Edit Profile</a>
+                                    <div class="dropdown-divider"></div>
+                                    <h5 class="dropdown-header">Store</h5>
+                                    @if (Auth::user()->store_name != NULL)
+                                    <a href="" class="dropdown-item">Orders</a>
+                                    <a href="{{ URL::to('/item') }}/{{ Auth::user()->id }}/show" class="dropdown-item">Items</a>
+                                    @endif
+                                    @if (Auth::user()->store_name == NULL)
+                                    <div class="dropdown-item">
+                                        <button type="button" class="btn btn-primary">Open Store</button>
+                                    </div>
+                                    @endif
+                                    <div class="dropdown-divider"></div>
                                     <a class="dropdown-item" href="{{ route('logout') }}"
                                        onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
